@@ -2,4 +2,4 @@
 	id = 541928d3-c3a7-47ba-bc3c-ff33dc0ee948
 [datalad "containers.task"]
 	image = containers/task_stimuli.sif
-	cmdexec = apptainer exec -e -B /run/user/$(id -u)/pulse:/run/user/$(id -u)/pulse -B /tmp/.X11-unix:/tmp/.X11-unix -B ${XAUTHORITY}:${XAUTHORITY} --env XAUTHORITY=$XAUTHORITY --env DISPLAY=$DISPLAY   task_stimuli.sif python3 main.py 
+	cmdexec = {img_dspath}/scripts/run_task.sh {img} python3 /src/task_stimuli/main.py {cmd}
